@@ -22,4 +22,8 @@ ciudad_temp_min = df_clima.loc[temp_min, 'Ciudad']
 
 registros_mayor_30 = (df_clima['Temperatura'] > 30).sum()
 
-print('registrso mayores a 30:', registros_mayor_30)
+#print('registrso mayores a 30:', registros_mayor_30)
+
+dias_ciudad = df_clima.groupby('Ciudad')['Fecha'].count()
+
+print(dias_ciudad)
