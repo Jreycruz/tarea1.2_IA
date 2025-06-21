@@ -6,8 +6,10 @@ df_ventas =  pd.read_csv("archivos_necesarios/ventas.csv")
 
 total_productos = df_ventas.groupby("Producto").sum()
 
-#print(total_productos)
-
 producto_mas_vendido = total_productos["Cantidad"].idxmax()
 
-print(f"El producto con mas ventas es: {producto_mas_vendido}")
+precio_promedio = df_ventas[df_ventas.Producto == "Monitor"]["Precio_Unitario"].mean()
+#print(total_productos)
+print(f"El producto con mas ventas es: {producto_mas_vendido} con un precio promedio de: {precio_promedio}")
+
+#print(precio_promedio)
